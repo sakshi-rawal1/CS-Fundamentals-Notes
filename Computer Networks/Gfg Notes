@@ -1,0 +1,32 @@
+Switch >> used to form  a LAN with a small area like an office
+
+(ISP) Router >> used to connect your network to some other network
+
+Protocols (IP, TCP, UDP, HTTP, SMTP, FTP)>> set of rules used by devices in order to communicate>> every protocol has header that defines how the msg should be and 
+details of the msg, positions>> sender side attaches the header >> receiver side removes the header processes it and forwards the message to upper layer, finds out the information from the header, does error detection
+if error then it might discard the packet 
+
+Why we need layering of protocols >>layers are used to organize protocols>> because we just implement the current layer protocol assuming all the underlying layers protocols are inplace and
+implemented correctly >> HTTP does not care about we are using wired network or wifi it just assumes that transport layer has implemented the same 
+
+Two popular models to layer computer networks >> OSI and TCP/IP
+
+OSI >> 7 layer model >> it was never accepted >> its more of conceptual 
+Application>> in tcp/ip it directly uses transport layer services >> HTTP(browser) >> SMTP(Mail)>>FTP(file trasnfer) >> SSH(secure server login )
+Presentation >> does data processing things>> not there in tcp/ip >> does encryption/decryption and encoding of data on sender side n decoding on receiver side
+Session >> not there in tcp/ip>> no particular protocol is responsible here.. RPC implements session layer independently >> combile multiple streams ie Ensures syncronization of msg, does session management n authentication 
+Transport >> end to end delivery is done by transport layer >> which exact process should be receiving the msg 
+Network >> if we need to connect to a computer which is not directly connected ie server in other country >> Router is Network layer device >> Network layer routes our msg from local network to distant network>> multiple routers are involved in between 
+Data Link >>handles one to one communication using ethernet in LAN or via switch ie through shared media or wireless media>> handles flow control,collision handling, error control, error detection, provide access to shared medium 
+Physical >>tranfer data in form of bits>>  handles wired or wireless connection between sender and receiver (singals and wires)
+
+in TCP/IP model the network layer use IP and ie connectionless protocol and is unreliable where as network layer of OSI may provide reliable or unreliable services 
+
+TCP/IP Model >> actually implemented 
+Application >> Message(units of communication) also called PDUs (Protocol data units)
+Transport >> Segments >> uses TCP and UDP 
+Network >> Packets >> uses IP 
+Link >> Frames >> 
+
+
+
